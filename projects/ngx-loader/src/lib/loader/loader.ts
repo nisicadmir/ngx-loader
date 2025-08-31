@@ -1,13 +1,13 @@
-import { CommonModule } from "@angular/common";
-import { Component, effect, Input } from "@angular/core";
+import { CommonModule } from '@angular/common';
+import { Component, Input } from '@angular/core';
 
-import { NgxLoaderService } from "../ngx-loader.service";
+import { NgxLoaderService } from '../ngx-loader.service';
 
 @Component({
-  selector: "ngx-loader",
+  selector: 'ngx-loader',
   imports: [CommonModule],
-  templateUrl: "./loader.html",
-  styleUrl: "./loader.css",
+  templateUrl: './loader.html',
+  styleUrl: './loader.css',
   standalone: true,
 })
 export class NgxLoader {
@@ -17,8 +17,8 @@ export class NgxLoader {
   public isVisible = false;
 
   constructor(private ngxLoaderService: NgxLoaderService) {
-    effect(() => {
-      this.isVisible = this.ngxLoaderService.isVisible();
+    this.ngxLoaderService.isVisible$.subscribe((isVisible) => {
+      this.isVisible = isVisible;
     });
   }
 }
