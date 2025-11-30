@@ -1,10 +1,7 @@
 {
   "name": "@nisix/ngx-loader",
-  "version": "20.0.13",
-  "peerDependencies": {
-    "@angular/common": "^20.1.0",
-    "@angular/core": "^20.1.0"
-  },
+  "version": "20.0.15",
+  "peerDependencies": {},
   "publishConfig": {
     "access": "public"
   },
